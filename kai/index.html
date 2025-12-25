@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kai's Korner</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body class="room-kai">
+  <div id="gate-kai" class="gate-overlay">
+    <div class="gate-card">
+      <h2>🚀 Kai's Korner 🚀</h2>
+      <p class="help">Enter the password to open this room.</p>
+      <label>
+        Password
+        <input type="password" autocomplete="off" />
+      </label>
+      <div class="gate-msg" data-gate-msg></div>
+      <div class="actions">
+        <button class="btn primary" type="button" data-gate-submit>Enter</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap section room">
+    <header class="room-header">
+      <h1>🚀 Kai's Korner 🚀</h1>
+      <p class="help">Play the memory game, track books, and jump to science and game sites.</p>
+    </header>
+
+    <section class="card">
+      <header class="card-head">
+        <h2>🎮 Memory Game</h2>
+      </header>
+      <p class="help">Tap cards to flip them over and match pairs. Match all pairs to finish the game.</p>
+      <div class="controls">
+        <label>
+          Size
+          <select id="mg-size">
+            <option value="4">4 × 4</option>
+            <option value="5">5 × 4</option>
+            <option value="6">6 × 4</option>
+          </select>
+        </label>
+        <button class="btn" type="button" id="mg-new">New game</button>
+      </div>
+      <div class="mg-stats">
+        <div class="stat"><span>Moves</span><strong id="mg-moves">0</strong></div>
+        <div class="stat"><span>Matches</span><strong id="mg-matches">0</strong></div>
+        <div class="stat"><span>Time</span><strong id="mg-time">0s</strong></div>
+      </div>
+      <div class="mg-grid" id="mg-grid"></div>
+    </section>
+
+    <section class="card">
+      <header class="card-head">
+        <h2>📚 Book Nook · Book Inventory</h2>
+      </header>
+      <p class="help">Add books you own, are reading, or want to read. Use tags to group them.</p>
+      <form class="form" data-inventory="kai_books" data-storage-key="kai_books_v1">
+        <div class="row">
+          <label>
+            Title
+            <input name="title" required />
+          </label>
+          <label>
+            Author
+            <input name="author" />
+          </label>
+        </div>
+        <div class="row">
+          <label>
+            Status
+            <select name="status">
+              <option value="owned">Owned</option>
+              <option value="want">Want</option>
+              <option value="reading">Reading</option>
+              <option value="finished">Finished</option>
+            </select>
+          </label>
+          <label>
+            Tag
+            <input name="tag" placeholder="series, topic, etc." />
+          </label>
+        </div>
+        <label>
+          Notes
+          <textarea name="notes" rows="2"></textarea>
+        </label>
+        <div class="actions">
+          <button class="btn" type="submit">Add</button>
+        </div>
+      </form>
+      <div class="list" data-list="kai_books"></div>
+      <div class="empty" data-empty="kai_books">No books added yet.</div>
+    </section>
+
+    <section class="card">
+      <header class="card-head">
+        <h2>🔗 Bookmarks</h2>
+      </header>
+      <p class="help">These sites have science activities and learning content.</p>
+      <div class="grid grid-3 links-grid">
+        <a class="tile small" href="https://phet.colorado.edu/" target="_blank" rel="noopener">PhET Kids Science</a>
+        <a class="tile small" href="https://www.nasa.gov/kids/" target="_blank" rel="noopener">NASA Kids</a>
+        <a class="tile small" href="https://kids.nationalgeographic.com/" target="_blank" rel="noopener">NatGeo Kids</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <header class="card-head">
+        <h2>🕹️ Online Games</h2>
+      </header>
+      <p class="help">Games that are fun and have some learning mixed in.</p>
+      <div class="grid grid-3 links-grid">
+        <a class="tile small" href="https://scratch.mit.edu/games" target="_blank" rel="noopener">Scratch Games</a>
+        <a class="tile small" href="https://www.coolmathgames.com/" target="_blank" rel="noopener">Coolmath Games</a>
+        <a class="tile small" href="https://pbskids.org/games/science/" target="_blank" rel="noopener">PBS Kids Science</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <a class="link" href="../index.html">Back to main page</a>
+    </footer>
+  </main>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emerson's Room</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body class="room-emerson">
+  <div id="gate-emerson" class="gate-overlay">
+    <div class="gate-card">
+      <h2>✨ Emerson's Room ✨</h2>
+      <p class="help">Enter the password to open this room.</p>
+      <label>
+        Password
+        <input type="password" autocomplete="off" />
+      </label>
+      <div class="gate-msg" data-gate-msg></div>
+      <div class="actions">
+        <button class="btn primary" type="button" data-gate-submit>Enter</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap section room">
+    <header class="room-header">
+      <h1>✨ Emerson's Room ✨</h1>
+      <p class="help">This page is just for you. Use it to track your socks and books.</p>
+    </header>
+
+    <section class="card">
+      <header class="card-head">
+        <h2>🧦 EmerSocks!</h2>
+      </header>
+      <p class="help">Track your sock collection. Add pairs you own or ones you would like to get.</p>
+      <form class="form" data-inventory="emer_socks" data-storage-key="emer_socks_v1">
+        <div class="row">
+          <label>
+            Name
+            <input name="name" required />
+          </label>
+          <label>
+            Pattern
+            <input name="pattern" />
+          </label>
+        </div>
+        <div class="row">
+          <label>
+            Status
+            <select name="status">
+              <option value="owned">Owned</option>
+              <option value="want">Want</option>
+            </select>
+          </label>
+          <label>
+            Pairs
+            <input name="pairs" type="number" min="1" value="1" />
+          </label>
+        </div>
+        <label>
+          Notes
+          <textarea name="notes" rows="2"></textarea>
+        </label>
+        <div class="actions">
+          <button class="btn" type="submit">Add</button>
+        </div>
+      </form>
+      <div class="list" data-list="emer_socks"></div>
+      <div class="empty" data-empty="emer_socks">No socks added yet.</div>
+    </section>
+
+    <section class="card">
+      <header class="card-head">
+        <h2>📚 Emerson's Pages · Book Inventory</h2>
+      </header>
+      <p class="help">Keep a list of books you own, are reading, or want to read later.</p>
+      <form class="form" data-inventory="emer_books" data-storage-key="emer_books_v1">
+        <div class="row">
+          <label>
+            Title
+            <input name="title" required />
+          </label>
+          <label>
+            Author
+            <input name="author" />
+          </label>
+        </div>
+        <div class="row">
+          <label>
+            Status
+            <select name="status">
+              <option value="owned">Owned</option>
+              <option value="want">Want</option>
+              <option value="reading">Reading</option>
+              <option value="finished">Finished</option>
+            </select>
+          </label>
+          <label>
+            Tag
+            <input name="tag" placeholder="series, genre, etc." />
+          </label>
+        </div>
+        <label>
+          Notes
+          <textarea name="notes" rows="2"></textarea>
+        </label>
+        <div class="actions">
+          <button class="btn" type="submit">Add</button>
+        </div>
+      </form>
+      <div class="list" data-list="emer_books"></div>
+      <div class="empty" data-empty="emer_books">No books added yet.</div>
+    </section>
+
+    <footer class="footer">
+      <a class="link" href="../index.html">Back to main page</a>
+    </footer>
+  </main>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>
